@@ -12,6 +12,7 @@ maxScore.addEventListener("click", function () {
 
 playerOneScoreBtn.addEventListener("click", () => {
     playerOneScore.textContent = parseInt(playerOneScore.textContent) + 1;
+    maxScoreValue = maxScore.value;
     if (playerOneScore.textContent == maxScoreValue) {
         playerOneScore.classList.add("has-text-success");
         playerTwoScore.classList.add("has-text-danger");
@@ -22,6 +23,7 @@ playerOneScoreBtn.addEventListener("click", () => {
 
 playerTwoScoreBtn.addEventListener("click", () => {
     playerTwoScore.textContent = parseInt(playerTwoScore.textContent) + 1;
+    maxScoreValue = maxScore.value;
     if (playerTwoScore.textContent == maxScoreValue) {
         playerTwoScore.classList.add("has-text-success");
         playerOneScore.classList.add("has-text-danger");
@@ -31,6 +33,7 @@ playerTwoScoreBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", () => {
+    maxScoreValue = maxScore.value;
     playerOneScore.textContent = 0;
     playerTwoScore.textContent = 0;
     playerOneScore.classList.remove("has-text-success");
