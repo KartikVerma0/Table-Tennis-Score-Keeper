@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Score Keeper</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+        />
+        <style>
+            .imgsize {
+                width: auto;
+                height: 15.55rem;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .social-media {
+                position: absolute;
+                right: 0.5rem;
+                bottom: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .social-media img {
+                max-width: 32px;
+                aspect-ratio: 1;
+                filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
+            }
+            .title {
+                margin-bottom: 0.25rem !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="title is-3 has-text-centered">
+            Table Tennis (Ping Pong) Score Keeper
+        </h1>
+        <img
+            src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=899&q=80"
+            alt=""
+            class="imgsize"
+        />
+        <section class="box">
+            <p class="box has-text-weight-bold has-text-centered">
+                Table Tennis (Ping Pong) Score Keeper
+            </p>
+            <div>
+                <h2 class="is-size-3-desktop">
+                    <span
+                        class="has-text-weight-bold is-size-1-desktop is-size-1-mobile is-size-1-tablet"
+                        id="playerOneScore"
+                        >0</span
+                    >
+                    to
+                    <span
+                        class="has-text-weight-bold is-size-1-desktop is-size-1-mobile is-size-1-tablet"
+                        id="playerTwoScore"
+                        >0</span
+                    >
+                </h2>
+                <p class="mt-3">Use the buttons below to keep score</p>
+                <div class="mt-3 mb-3">
+                    <label for="maxScore" class="has-text-weight-semibold"
+                        >Playing to</label
+                    >
+                    <div class="select is-danger is-rounded is-small">
+                        <select name="maxScore" id="maxScore">
+                            <option value="11">11</option>
+                            <option value="13">13</option>
+                            <option value="15">15</option>
+                            <option value="17">17</option>
+                            <option value="19">19</option>
+                            <option value="21">21</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="button is-primary" id="playerOneScoreBtn">
+                    +1 Player One
+                </button>
+                <button class="button is-info" id="playerTwoScoreBtn">
+                    +1 Player Two
+                </button>
+                <button class="button is-danger" id="resetBtn">Reset</button>
+            </div>
+        </section>
+
+        <section class="social-media">
+            <a
+                href="https://www.linkedin.com/in/kartik-verma-62b7b422a/"
+                target="_blank"
+                title="Connect With me"
+                ><img src="images/PngItem_1086954.png" alt=""
+            /></a>
+            <a
+                href="https://github.com/KartikVerma0/"
+                target="_blank"
+                title="Visit My Profile"
+                ><img src="images/github-logo.png" alt=""
+            /></a>
+        </section>
+        <script src="app.js"></script>
+    </body>
+</html>
