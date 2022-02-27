@@ -12,6 +12,7 @@ const players = [
 const totalPlayers = players.length;
 const resetBtn = document.querySelector("#resetBtn");
 const maxScore = document.querySelector("#maxScore");
+const confetti = document.querySelector("#confetti");
 
 function updateScore(players, playingOrder) {
     let playerIndex = playingOrder - 1;
@@ -27,6 +28,7 @@ function updateScore(players, playingOrder) {
                 players[i].score.classList.add("has-text-danger");
             }
         }
+        confetti.classList.toggle("display-block");
     }
 }
 
@@ -37,6 +39,7 @@ function reset(players) {
         players[i].score.classList.remove("has-text-danger");
         players[i].scoreBtn.removeAttribute("disabled");
     }
+    confetti.classList.toggle("display-block");
 }
 
 for (let i = 0; i < totalPlayers; i++) {
