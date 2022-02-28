@@ -8,57 +8,77 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
         />
-        <style>
-            .imgsize {
-                width: auto;
-                height: 15.55rem;
-            }
-            body {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .social-media {
-                position: absolute;
-                right: 0.5rem;
-                bottom: 0.5rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .social-media img {
-                max-width: 32px;
-                aspect-ratio: 1;
-                filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
-            }
-
-            @media screen and (max-width: 768px) {
-                body {
-                    padding-top: 1rem;
-                }
-            }
-            .title {
-                margin-bottom: 0.25rem !important;
-            }
-            .confetti-overlay {
-                width: 100%;
-                height: 100vh;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 999;
-                pointer-events: none;
-                display: none;
-            }
-            .display-block {
-                display: block !important;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
+        <!-- Player Information gathering screen -->
+        <div class="Player-information">
+            <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card pt-6 pr-6">
+                    <header class="modal-card-head has-background-danger-dark">
+                        <p
+                            class="modal-card-title title is-size-3 has-text-white"
+                        >
+                            Welcome &#x1F64F;
+                        </p>
+                    </header>
+                    <section
+                        class="modal-card-body has-background-danger-light"
+                    >
+                        <p
+                            class="title is-4 has-text-danger-dark fadeOutAnimation"
+                        >
+                            Please enter Player`s Name
+                        </p>
+                        <form class="Players-name mt-6">
+                            <div class="field fadeOutAnimation">
+                                <label class="label">1st Player Name:</label>
+                                <div class="control">
+                                    <input
+                                        class="input"
+                                        type="text"
+                                        id="playerOneName"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="field fadeOutAnimation">
+                                <label class="label">2nd Player Name:</label>
+                                <div class="control">
+                                    <input
+                                        class="input"
+                                        type="text"
+                                        id="playerTwoName"
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                        <div class="tt-animation-container">
+                            <lottie-player
+                                src="https://assets7.lottiefiles.com/packages/lf20_8oi0cevt.json"
+                                background="transparent"
+                                speed="1"
+                                id="tt-animation"
+                                style="width: 60%; height: 60%"
+                                loop
+                            ></lottie-player>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button
+                            class="button has-background-danger-dark has-text-danger-light"
+                            id="modalSaveBtn"
+                        >
+                            Save
+                        </button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confetti Particle Screen, visible only on winning -->
         <div class="confetti-overlay" id="confetti">
             <lottie-player
                 src="https://assets2.lottiefiles.com/packages/lf20_30iie6.json"
@@ -68,14 +88,18 @@
                 autoplay
             ></lottie-player>
         </div>
+
+        <!-- Page title -->
         <h1 class="title is-3 has-text-centered">
             Table Tennis (Ping Pong) Score Keeper
         </h1>
+
         <img
             src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=899&q=80"
             alt=""
             class="imgsize"
         />
+
         <section class="box">
             <p class="box has-text-weight-bold has-text-centered">
                 Table Tennis (Ping Pong) Score Keeper
@@ -122,6 +146,7 @@
             </div>
         </section>
 
+        <!-- Social Media Icons -->
         <section class="social-media">
             <a
                 href="https://www.linkedin.com/in/kartik-verma-62b7b422a/"
@@ -136,6 +161,14 @@
                 ><img src="images/github-logo.png" alt=""
             /></a>
         </section>
+
+        <!-- SCRIPT TAGS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+            integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <script src="app.js"></script>
     </body>
